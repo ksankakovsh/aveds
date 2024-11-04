@@ -13,7 +13,7 @@ const Features: React.FC<FeaturesProps> = ({ cards }) => {
                             src={card.imagee}
                             alt={'Icon'}
                             />
-                            <h2 className={classes.cardTitle}>{card.title}</h2>
+                            <h3 className={classes.cardTitle}>{card.title}</h3>
                             <hr className={classes.separation}/>
                             <p className={classes.cardText}>{card.description}</p>
                         </div>

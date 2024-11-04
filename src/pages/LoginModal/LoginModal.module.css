@@ -21,6 +21,7 @@
     display: flex;
     margin: 0 0 10px;
     justify-content: flex-end;
+    cursor: pointer;
 }
 .modal__input {
     box-sizing: border-box;
