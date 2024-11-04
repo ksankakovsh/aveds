@@ -1,0 +1,26 @@
+.wrap {
+    max-width: 1046px;
+    width: 100%;
+    margin: 0 auto;
+}
+h1 {
+    margin-bottom: 35px;
+}
+.buttonsNav {
+    display: flex;
+    gap: 10px;
+}
+.buttonNav {
+    display: inline-block;
+    text-decoration: none;
+    padding: 15px 40px;
+    color: #FF685B;
+    border: 2px solid #FF685B;
+    border-radius: 7px;
+    text-align: center;
+}
+
+.buttonNav:hover {
+    color: #ffffff;
+    background-color: #FF685B;
+}
