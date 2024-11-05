@@ -19,7 +19,7 @@ const cards: Card[] = [
 
 
 const Main : React.FC<MainProps> = ({ setUser }) => {
-    const [isModalOpen, setIsModalOpen] = useState<boolean>(true);
+    const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
     const openModal = () => setIsModalOpen(true);
     const closeModal = () => setIsModalOpen(false);
@@ -29,7 +29,7 @@ const Main : React.FC<MainProps> = ({ setUser }) => {
             <div className={classes.wrap}>
                 <h1>Место для получения медицинской помощи</h1>
                 <div className={classes.buttonsNav}>
-                    <Link to="/profile" className={classes.buttonNav} onClick={openModal}>Войти</Link>
+                    <button  className={classes.buttonNav} onClick={openModal}>Войти</button>
                     <Link to="/contacts" className={classes.buttonNav}>Контакты</Link>
                 
                     {isModalOpen && <LoginModal setUser={setUser} closeModal={closeModal} />}

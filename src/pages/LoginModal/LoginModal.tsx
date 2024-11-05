@@ -2,19 +2,19 @@ import React, { useState } from 'react';
 import users from '../../data.json';
 import { User } from '../../interfaces/user';
 import classes from './LoginModal.module.css';
+import { useNavigate } from 'react-router-dom';
 
 
 interface LoginModalProps {
   setUser: (user: User) => void;
   closeModal: () => void;
-//   active: boolean;
-//   setActive: () => void;
 }
 
 const LoginModal: React.FC<LoginModalProps> = ({ setUser, closeModal }) => {
   const [login, setLogin] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [error, setError] = useState<string>('');
+  const navigate = useNavigate();
 
   const handleSubmit = () => {
     const foundUser = (users as User[]).find((u) => u.login === login && u.password === password);
@@ -22,6 +22,7 @@ const LoginModal: React.FC<LoginModalProps> = ({ setUser, closeModal }) => {
       localStorage.setItem('user', JSON.stringify(foundUser));
       setUser(foundUser);
       closeModal();
+      navigate("/profile");
     } else {
       setError('Invalid login or password');
     }
